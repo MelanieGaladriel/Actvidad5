@@ -1,0 +1,56 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package alumno1;
+
+/**
+ *
+ * @author work pc
+ */
+public class Alumno {
+private final String nombre;
+private final double[] calificaciones;
+public Alumno(String nombre, double[] calificaciones){
+  this.nombre = nombre;
+  this.calificaciones = calificaciones;
+}
+
+public double calcularPromedio(){
+double suma = 0;
+for (double calificacion : calificaciones){
+  suma += calificacion;
+  }
+return suma / calificaciones.length;
+}
+
+ public char obtenerCalificaciones(double promedio){
+ char calificacion;
+ if (promedio <=50){
+  calificacion = 'F';}
+ else if (promedio <=60){
+ calificacion = 'E';}
+ else if (promedio <=70){
+ calificacion = 'D';}
+ else if (promedio <=80){
+ calificacion = 'C';}
+ else if (promedio <=90){
+ calificacion = 'B';}
+ else {
+ calificacion = 'A';}
+  return calificacion;
+  }
+ 
+public void imprimirResultados(){
+double promedio = calcularPromedio();
+char calificacion = obtenerCalificaciones(promedio);
+System.out.println("Nombre del estudiante: "  + nombre);
+System.out.println("Calificación 1: " + calificaciones[0]);
+System.out.println("Calificación 2: " + calificaciones[1]);
+System.out.println("Calificación 3: " + calificaciones[3]);
+System.out.println("Calificación 4: " + calificaciones[4]);
+System.out.println("Calificación 5: " + calificaciones[5]);
+System.out.println("Promedio: " + promedio);
+System.out.println("Calificación: " + calificaciones);
+ }
+}
